@@ -7,7 +7,7 @@ Code examples written for [Processing 2.1.2](http://processing.org/download/).
 
 Recommended order:
 
-1. Getting Started (For those unfamiliar with Processing)
+1. Getting Started (for those unfamiliar with Processing)
   * DisplayText
   * AvailableFonts
   * CustomFont
@@ -17,6 +17,7 @@ Recommended order:
   * InsideOutsideText
   * GradientCutout
   * AggregateDrawing
+  * Todo :)
 
 1. PDF Export
   * Todo :)
