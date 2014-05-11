@@ -1,0 +1,6 @@
+
+#ignore thumbnails created by windows
+Thumbs.db
+
+#ignore ideas folder
+[Ii]nspiration
