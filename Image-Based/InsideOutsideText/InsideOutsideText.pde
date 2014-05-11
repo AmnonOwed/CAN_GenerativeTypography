@@ -12,8 +12,8 @@
 color ELLIPSE_COLOR = color(0); // color of drawn ellipses
 color LINE_COLOR = color(0, 125); // color of drawn lines
 color PGRAPHICS_COLOR = color(0); // won't impact this sketch's visual outcome
-int LINE_LENGTH = 25; // length of the lines outside text
-boolean reverseDrawing = false; // boolean to flip the drawing method
+int LINE_LENGTH = 25; // length of drawn lines
+boolean reverseDrawing = false; // boolean to flip the drawing method (toggle with mouse)
 
 PGraphics pg;
 
@@ -47,7 +47,8 @@ void draw() {
       float e_y = y * h;
       color c = pg.get(int(e_x), int(e_y)); // get PGraphics color at this coordinate
       boolean textDrawn = (c == PGRAPHICS_COLOR); // is the color equal to PGRAPHICS_COLOR (aka is there text here)
-      // use the reverseDrawing boolean to flip the textDrawn boolean, thus the displayed shapes (aka flip the drawing method)
+      // use the reverseDrawing boolean to flip the textDrawn boolean
+      // thus in fact flipping the resulting displayed shapes
       if (reverseDrawing ? !textDrawn : textDrawn) {
         noStroke();
         fill(ELLIPSE_COLOR);
