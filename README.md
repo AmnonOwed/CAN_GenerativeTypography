@@ -17,6 +17,7 @@ Recommended order:
   * InsideOutsideText
   * GradientCutout
   * AggregateDrawing
+  * AggregateParticles
   * Todo :)
 
 1. PDF Export
