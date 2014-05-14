@@ -12,7 +12,7 @@ class Particle {
 
   // get a random position inside the text
   void getPosition() {
-    while (loc == null || !isInText (loc)) loc = new PVector(random(width), random(height));
+    while (loc == null || !isInText(loc)) loc = new PVector(random(width), random(height));
   }
 
   void update() {
@@ -23,9 +23,10 @@ class Particle {
         if (!isInText(loc)) getPosition(); // once the particle is outside the text, randomly place it somewhere inside the text
         break;
       case 1: 
+      case 2: 
         life -= lifeRate; // decrease life by the lifeRate (the particle is removed by the addRemoveParticles() method when no life is left)
         break;
-      case 2: 
+      case 3: 
         // combine the behaviors of case 0 (keep particle inside text) and 1 (decrease life, remove particle)
         if (!isInText(loc)) getPosition();
         life -= lifeRate;
@@ -38,9 +39,10 @@ class Particle {
     stroke(0, 125); // transparant black stroke
     float r = radius; // radius of the ellipse
     switch(drawMode) {
-      case 0: break;
-      case 1: // go to 2
-      case 2: r *= life; break; // base the radius of the ellipse on the life (which decreases from 1 to 0)
+      case 0: break; // don't change radius
+      case 1: // go to 3
+      case 2: // go to 3
+      case 3: r *= life; break; // base the radius of the ellipse on the life (which decreases from 1 to 0)
     }
     ellipse(loc.x, loc.y, r, r); // draw ellipse
   }

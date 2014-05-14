@@ -8,7 +8,7 @@
  * a visible trail (since there is no background call).
  * 
  * USAGE:
- * - click the mouse to move through the three different drawing modes
+ * - click the mouse to move through the four different drawing modes
  */
 
 int maxParticles = 100; // the maximum number of active particles
@@ -42,9 +42,10 @@ void draw() {
 }
 
 void mousePressed() {
+  drawMode = ++drawMode%4; // move through 4 drawing modes (0, 1, 2, 3)
   background(BACKGROUND_COLOR); // clear the screen
+  if (drawMode==2) image(pg, 0, 0);
   particles.clear(); // remove all particles
-  drawMode = ++drawMode%3; // move through 3 drawing modes (0, 1, 2)
 }
 
 void addRemoveParticles() {
