@@ -19,6 +19,7 @@ Recommended order:
   * AggregateDrawing
   * AggregateParticles
   * FlowField
+  * FlowFieldVariant
   * Todo :)
 
 1. PDF Export
