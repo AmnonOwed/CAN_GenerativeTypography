@@ -18,6 +18,7 @@ Recommended order:
   * GradientCutout
   * AggregateDrawing
   * AggregateParticles
+  * FlowField
   * Todo :)
 
 1. PDF Export
