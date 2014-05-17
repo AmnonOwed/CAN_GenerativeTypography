@@ -21,7 +21,7 @@ Recommended order:
   * AggregateParticles
   * FlowField
   * FlowFieldVariant
-  * Todo :)
+  * ReactionDiffusion
 
 1. PDF Export
   * Todo :)
