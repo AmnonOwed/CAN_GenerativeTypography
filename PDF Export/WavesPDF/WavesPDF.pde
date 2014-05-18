@@ -1,6 +1,6 @@
 
 /*
- * Identical to the Image-Based > Waves example, but with added PDF support!
+ * Identical to the Image-Based > Waves code example, but with added PDF support!
  *
  * This sketch uses the text drawn to an offscreen PGraphics to determine
  * if coordinate are inside the drawn text. If so, a curveVertex is added.
@@ -22,7 +22,7 @@ color BACKGROUND_COLOR = color(255);   // background color of the sketch
 color PGRAPHICS_COLOR = color(0);
 PGraphics pg;
 
-boolean saveOneFrame = false;          // variable used to save a single frame as a PDF
+boolean saveOneFrame = false;          // variable used to save a single frame as a PDF page
 
 void setup() {
   size(1280, 720, P2D);
@@ -39,14 +39,15 @@ void setup() {
 
 void draw() {
   // begin recording to PDF
-  // all drawing commands will be recorded to the PDF-file called "Waves.pdf"
   if(saveOneFrame == true) {
     beginRecord(PDF, "Waves-" + timestamp() + ".pdf"); 
   }
+  
   // set colorMode for the sketch to Hue-Saturation-Brightness (HSB)
   // must be called after beginRecord to work for the exported PDF!
   colorMode(HSB, 360, 100, 100);
   
+  // the original draw() calls from the Image-Based > Waves code example
   background(BACKGROUND_COLOR);
   float w = float(width) / gridX;
   float h = float(height) / gridY;
@@ -94,7 +95,7 @@ void draw() {
 }
 
 void mousePressed() {
-  saveOneFrame = true; // set the variable to true to save a single frame as a PDF file 
+  saveOneFrame = true; // set the variable to true to save a single frame as a PDF file / page 
 }
 
 String timestamp() {
