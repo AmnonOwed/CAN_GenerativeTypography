@@ -24,6 +24,7 @@ Recommended order:
   * ReactionDiffusion
 
 1. PDF Export
+  * WavesPDF
   * Todo :)
 
 1. 3D
