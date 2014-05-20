@@ -3,7 +3,7 @@
 
 **WORK-IN-PROGRESS**
 
-Code examples written for [Processing 2.2](http://processing.org/download/).
+Code examples written for [Processing 2.2.1](http://processing.org/download/).
 
 Recommended order:
 
@@ -25,6 +25,7 @@ Recommended order:
 
 1. PDF Export
   * WavesPDF
+  * CirclePacking
   * Todo :)
 
 1. 3D
