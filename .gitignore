@@ -4,3 +4,9 @@ Thumbs.db
 
 #ignore ideas folder
 [Ii]nspiration
+
+#ignore fonts
+*.ttf
+*.ttc
+*.otf
+*.fon
