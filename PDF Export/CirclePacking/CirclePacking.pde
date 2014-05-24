@@ -51,8 +51,6 @@ void draw() {
     c.display();
   }
   
-  frame.setTitle(circles.size() + " | " + round(frameRate));
-
   // end recording to PDF
   if(saveOneFrame) {
     endRecord();
