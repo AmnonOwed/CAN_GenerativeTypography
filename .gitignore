@@ -10,3 +10,6 @@ Thumbs.db
 *.ttc
 *.otf
 *.fon
+
+#do not ignore FreeSans.ttf (exception to the above rule)
+!FreeSans.ttf
