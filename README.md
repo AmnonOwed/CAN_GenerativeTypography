@@ -27,6 +27,7 @@ Recommended order:
   * WavesPDF
   * CirclePacking
   * UsingGeomerative
+  * LinesCircles
   * Todo :)
 
 1. 3D
