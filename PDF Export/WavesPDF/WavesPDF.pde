@@ -8,7 +8,7 @@
  * stream of horizontal points within the text.
  *
  * USAGE:
- * - click the mouse to export a single frame as a PDF page
+ * - press 's' to export a single frame as a PDF page
  */
 
 import processing.pdf.*;
@@ -94,8 +94,10 @@ void draw() {
   }
 }
 
-void mousePressed() {
-  saveOneFrame = true; // set the variable to true to save a single frame as a PDF file / page 
+void keyPressed() {
+  if (key == 's') {
+    saveOneFrame = true; // set the variable to true to save a single frame as a PDF file / page
+  }
 }
 
 String timestamp() {
