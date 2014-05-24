@@ -26,6 +26,7 @@ Recommended order:
 1. PDF Export
   * WavesPDF
   * CirclePacking
+  * UsingGeomerative
   * Todo :)
 
 1. 3D
