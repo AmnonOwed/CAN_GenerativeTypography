@@ -5,7 +5,7 @@
 
 Original repository location: [https://github.com/AmnonOwed/CAN_GenerativeTypography](https://github.com/AmnonOwed/CAN_GenerativeTypography)
 
-All code examples written in / for [Processing 2.2.1](http://processing.org/download/) by [Amnon Owed](http://vimeo.com/amnon) / [@AmnonOwed](https://twitter.com/AmnonOwed)
+All code examples written by [Amnon Owed](http://vimeo.com/amnon) / [@AmnonOwed](https://twitter.com/AmnonOwed) with [Processing 2.2.1](http://processing.org/download/)
 
 External library dependencies indicated below after the code example's name:
 
