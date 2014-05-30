@@ -38,6 +38,7 @@ Recommended order:
   * CirclePacking
   * UsingGeomerative `G`
   * LinesCircles `G`
+  * VoronoiType `G` `M`
   * Todo :)
 
 1. 3D
