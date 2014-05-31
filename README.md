@@ -39,6 +39,7 @@ Recommended order:
   * UsingGeomerative `G`
   * LinesCircles `G`
   * VoronoiType `G` `M`
+  * VoronoiVariant `G` `M`
   * Todo :)
 
 1. 3D
