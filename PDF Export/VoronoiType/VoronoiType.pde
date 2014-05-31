@@ -30,7 +30,7 @@ color[] colors;                   // holds the colors for the voronoi regions
 int numPointsText;                // the number of points generated from the text
 int currentPoint;                 // holds the current point used for the 'moving points' effect
 float interpolationBetweenPoints; // holds the interpolation value used for the 'moving points' effect
-float[][] points;                 // holds the text and randdomly generated points
+float[][] points;                 // holds the text and randomly generated points
 boolean displayPoints = true;     // variable used to toggle the display of points
 
 void setup() {

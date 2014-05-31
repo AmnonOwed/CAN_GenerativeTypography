@@ -20,7 +20,7 @@ RShape shape;                     // holds the base shape created from the text
 MPolygon[] myRegions;             // holds the voronoi regions generated from the points
 color[] colors;                   // holds the colors for the voronoi regions
 int numPointsText;                // the number of points generated from the text
-float[][] points;                 // holds the text and randdomly generated points
+float[][] points;                 // holds the text and randomly generated points
 
 void setup() {
   size(1280, 720);
