@@ -41,7 +41,7 @@ Recommended order:
   * Ocean `G`
   * VoronoiType `G` `M`
   * VoronoiVariant `G` `M`
-  * Todo :)
 
 1. 3D
+  * Basic3DType `G` `H`
   * Todo :)
