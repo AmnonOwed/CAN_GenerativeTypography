@@ -1,6 +1,6 @@
 
 /*
- * This example shows you how to use the Geomerative and the Hemesh library to:
+ * This example shows you how to use the Geomerative & Hemesh libraries to:
  *  1. turn a String of text into a 2D shape (using Geomerative)
  *  2. turn a 2D shape into an extruded 3D mesh (using Hemesh)
  *
@@ -59,17 +59,19 @@ void draw() {
 
 // Turn a string into a 3D HE_Mesh
 HE_Mesh createHemeshFromString(String s) {
+  
   // Geomerative
   RMesh rmesh = font.toGroup(s).toMesh(); // create a 2D mesh from a text
   rmesh.translate(-rmesh.getWidth()/2, rmesh.getHeight()/2); // center the mesh
 
-  // Hemesh
-  ArrayList <WB_Triangle> triangles = new ArrayList <WB_Triangle> (); // holds the 2D mesh
-  ArrayList <WB_Triangle> trianglesFlipped = new ArrayList <WB_Triangle> (); // holds the flipped 2D mesh (for a mirror-closed 3D shape!)
-  // extract the triangles from geomerative's 2D text mesh and place them as hemesh's 3D WB_Triangle's in their respective lists (normal & flipped)
+  // Geomerative & Hemesh
+  ArrayList <WB_Triangle> triangles = new ArrayList <WB_Triangle> (); // holds the original 2D text mesh
+  ArrayList <WB_Triangle> trianglesFlipped = new ArrayList <WB_Triangle> (); // holds the flipped 2D text mesh
   RPoint[] pnts;
   WB_Triangle t, tFlipped;
   WB_Point a, b, c;
+  // extract the triangles from geomerative's 2D text mesh, then place them
+  // as hemesh's 3D WB_Triangle's in their respective lists (normal & flipped)
   for (int i=0; i<rmesh.strips.length; i++) {
     pnts = rmesh.strips[i].getPoints();
     for (int j=2; j<pnts.length; j++) {
@@ -89,6 +91,7 @@ HE_Mesh createHemeshFromString(String s) {
     }
   }
 
+  // Hemesh
   // Creating a quality extruded 3D HE_Mesh in 4 steps
   
   // 1. create the base 3D HE_Mesh from the triangles of the 2D text shape
@@ -111,11 +114,11 @@ HE_Mesh createHemeshFromString(String s) {
 
 // color each face in the mesh based on it's xy-position using HSB colormode
 void colorFaces(HE_Mesh mesh) {
-  colorMode(HSB, 1);
+  colorMode(HSB, 1); // set colorMode to HSB
   for (HE_Face face : mesh.getFacesAsArray ()) {
     WB_Point c = face.getFaceCenter();
     face.setLabel(color(map(c.xf() + c.yf(), -500, 500, 0, 1), 1, 1));
   }
-  colorMode(RGB, 255);
+  colorMode(RGB, 255); // (re)set colorMode to RGB
 }
 
