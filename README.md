@@ -23,7 +23,7 @@ Recommended order:
   * CustomFont
   * UsingPGraphics
 
-1. Image-Based
+2. Image-Based
   * InsideOutsideText
   * GradientCutout
   * Waves
@@ -33,7 +33,7 @@ Recommended order:
   * FlowFieldVariant
   * ReactionDiffusion
 
-1. PDF Export
+3. PDF Export
   * WavesPDF
   * CirclePacking
   * UsingGeomerative `G`
@@ -42,6 +42,7 @@ Recommended order:
   * VoronoiType `G` `M`
   * VoronoiVariant `G` `M`
 
-1. 3D
+4. 3D
   * Basic3DType `G` `H`
+  * HemeshToPShape `G` `H`
   * Todo :)
