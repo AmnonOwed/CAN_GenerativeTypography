@@ -45,4 +45,5 @@ Recommended order:
 4. 3D
   * Basic3DType `G` `H`
   * HemeshToPShape `G` `H`
+  * MeshManipulation `G` `H`
   * Todo :)
