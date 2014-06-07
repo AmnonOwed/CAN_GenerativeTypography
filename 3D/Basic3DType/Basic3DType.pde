@@ -18,7 +18,7 @@ import wblut.geom.*;               // hemesh library section with geometry class
 RFont font;                        // geomerative font used for creating the 3D text
 WB_Render render;                  // hemesh class for displaying shapes
 HE_Mesh mesh;                      // the main HE_Mesh instance to hold the 3D mesh
-String input = "TYPE";             // the input string that is transformed into 3D mesh 
+String input = "TYPE";             // the input string that is transformed into a 3D mesh 
 
 void setup() {
   // Processing
@@ -29,30 +29,31 @@ void setup() {
   RG.init(this); // initialize the Geomerative library
   RCommand.setSegmentator(RCommand.UNIFORMSTEP); // settings for the generated shape density
   RCommand.setSegmentStep(2); // settings for the generated shape density
-  font = new RFont("../../Fonts/FreeSans.ttf", 350); // create font used by Geomerative
+  font = new RFont("../../Fonts/FreeSans.ttf", 350); // create the font used by Geomerative
 
   // Hemesh
   render = new WB_Render(this); // setup the hemesh render class for displaying shapes
 
-  // the two methods (see below) that do the actual work in this sketch 
+  // call the two methods (see below) that do the actual work in this sketch 
   mesh = createHemeshFromString(input); // create a 3D mesh from an input string (using Geomerative & Hemesh)
   colorFaces(mesh); // color the faces of the generated mesh using a bit of custom code
 }
 
 void draw() {
-  background(255);
-  perspective(PI/3.0, (float) width/height, 1, 1000000);
-  lights();
-  translate(width/2, height/2);
-  rotateY(frameCount * 0.01);
+  background(255); // clear the background
+  perspective(PI/3.0, (float) width/height, 1, 1000000); // wide clipping planes
+  lights(); // add general Processing lights
+  translate(width/2, height/2); // center the shape on screen
+  rotateY(frameCount * 0.01); // rotate around the Y axis
 
-  // display colored faces and subtle edge lines
+  // display the mesh using colored faces and subtle edge lines
   stroke(0, 125);
   strokeWeight(0.5);
-  HE_Face[] faces = mesh.getFacesAsArray();
-  for (int i=0; i<faces.length; i++) {
-    fill(faces[i].getLabel()); // colors are stored in each Face's label (see colorFaces method below)
-    render.drawFace(faces[i], false, mesh);
+  for (HE_Face face : mesh.getFacesAsArray ()) {
+    // colors are stored in each Face's label (see colorFaces() method below)
+    fill(face.getLabel());
+    // draw the face using Hemesh's render class
+    render.drawFace(face, false, mesh);
   }
 }
 
@@ -65,14 +66,16 @@ HE_Mesh createHemeshFromString(String s) {
   // Hemesh
   ArrayList <WB_Triangle> triangles = new ArrayList <WB_Triangle> (); // holds the 2D mesh
   ArrayList <WB_Triangle> trianglesFlipped = new ArrayList <WB_Triangle> (); // holds the flipped 2D mesh (for a mirror-closed 3D shape!)
-  // extract the triangles from the 2D mesh and place them in the respective lists
+  // extract the triangles from geomerative's 2D text mesh and place them as hemesh's 3D WB_Triangle's in their respective lists (normal & flipped)
+  RPoint[] pnts;
   WB_Triangle t, tFlipped;
+  WB_Point a, b, c;
   for (int i=0; i<rmesh.strips.length; i++) {
-    RPoint[] pnts = rmesh.strips[i].getPoints();
+    pnts = rmesh.strips[i].getPoints();
     for (int j=2; j<pnts.length; j++) {
-      WB_Point a = new WB_Point(pnts[j-2].x, pnts[j-2].y, 0);
-      WB_Point b = new WB_Point(pnts[j-1].x, pnts[j-1].y, 0);
-      WB_Point c = new WB_Point(pnts[j].x, pnts[j].y, 0);
+      a = new WB_Point(pnts[j-2].x, pnts[j-2].y, 0);
+      b = new WB_Point(pnts[j-1].x, pnts[j-1].y, 0);
+      c = new WB_Point(pnts[j].x, pnts[j].y, 0);
       if (j % 2 == 0) {
         t = new WB_Triangle(a, b, c);
         tFlipped = new WB_Triangle(c, b, a);
@@ -88,8 +91,8 @@ HE_Mesh createHemeshFromString(String s) {
 
   // Creating a quality extruded 3D HE_Mesh in 4 steps
   
-  // 1. create the base 3D Hemesh from the triangles of the 2D text shape
-  // (at this point you basically have a 2D text shape stored in a HE_Mesh)
+  // 1. create the base 3D HE_Mesh from the triangles of the 2D text shape
+  // (at this point you basically have a 2D text shape stored in a 3D HE_Mesh)
   HE_Mesh tmesh = new HE_Mesh(new HEC_FromTriangles().setTriangles(triangles));
   
   // 2. extrude the base mesh by a certain distance
