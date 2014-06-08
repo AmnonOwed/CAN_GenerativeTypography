@@ -47,5 +47,6 @@ Recommended order:
   * HemeshToPShape `G` `H`
   * MeshManipulation `G` `H`
   * Deconstructed `G` `H`
+  * SlicedUp `G` `H`
   * FlowField3D `G` `H`
   * Todo :)
