@@ -46,5 +46,6 @@ Recommended order:
   * Basic3DType `G` `H`
   * HemeshToPShape `G` `H`
   * MeshManipulation `G` `H`
+  * Deconstructed `G` `H`
   * FlowField3D `G` `H`
   * Todo :)
