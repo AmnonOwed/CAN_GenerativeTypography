@@ -143,15 +143,6 @@ void generateMeshes(HE_Mesh mesh) {
   println("Done.");
 }
 
-// get a random selection of faces from the mesh, given a certain threshold
-HE_Selection getRandomSelection(HE_Mesh mesh, float threshold) {
-  HE_Selection selection = new HE_Selection(mesh);
-  for (HE_Face face : mesh.getFacesAsArray()) {
-    if (random(1) < threshold) selection.add(face);
-  }
-  return selection;
-}
-
 // cut each mesh in the list
 ArrayList <HE_Mesh> slice(ArrayList <HE_Mesh> meshList, float offset) {
   ArrayList <HE_Mesh> newList = new ArrayList <HE_Mesh> ();
