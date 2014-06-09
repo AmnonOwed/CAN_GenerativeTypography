@@ -1,7 +1,7 @@
 ﻿Generative Typography
 =====================
 
-**WORK-IN-PROGRESS**
+Blog post location: **TBD**
 
 Original repository location: [https://github.com/AmnonOwed/CAN_GenerativeTypography](https://github.com/AmnonOwed/CAN_GenerativeTypography)
 
@@ -9,11 +9,14 @@ All code examples written by [Amnon Owed](http://vimeo.com/amnon) / [@AmnonOwed]
 
 External library dependencies indicated below after the code example's name:
 
- - `G` = [Geomerative](http://www.ricardmarxer.com/geomerative/)* by Ricard Marxer / [@ricardmp](https://twitter.com/ricardmp)
- - `H` = [HE_Mesh 2014](http://hemesh.wblut.com/)* by Frederik Vanhoutte / [@wblut](https://twitter.com/wblut)
+ - `G` = [Geomerative](http://www.ricardmarxer.com/geomerative/) by Ricard Marxer / [@ricardmp](https://twitter.com/ricardmp)
+ - `H` = [HE_Mesh 2014](http://hemesh.wblut.com/) by Frederik Vanhoutte / [@wblut](https://twitter.com/wblut)
  - `M` = [Mesh](http://www.leebyron.com/else/mesh/) by Lee Byron / [@leeb](https://twitter.com/leeb)
 
-\* _Can be installed via Processing's library manager (via `Sketch` > `Import Library` > `Add Libary`)_
+Notes on installing external libraries:
+
+\* _Geomerative can be installed via Processing's library manager (via `Sketch` > `Import Library` > `Add Libary`)_
+\* _The HE_Mesh 2014 and Mesh libraries must be downloaded from the linked sites and installed manually_
 
 Recommended order:
 
