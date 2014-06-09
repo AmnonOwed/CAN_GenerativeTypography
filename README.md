@@ -15,9 +15,9 @@ External library dependencies indicated below after the code example's name:
 
 Notes on installing external libraries:
 
-* Geomerative can be installed via Processing's library manager.
+* **Geomerative** can be installed via Processing's library manager.
 * Processing's library manager can be accessed via `Sketch` > `Import Library` > `Add Libary`
-* The HE_Mesh 2014 and Mesh libraries must be downloaded from the linked sites and installed manually.
+* **HE_Mesh 2014** and **Mesh** must be downloaded from the linked sites and installed manually.
 * Instructions for installing contributed libraries manually can be found [here](http://wiki.processing.org/w/How_to_Install_a_Contributed_Library).
 
 Recommended order:
