@@ -49,4 +49,4 @@ Recommended order:
   * Deconstructed `G` `H`
   * SlicedUp `G` `H`
   * FlowField3D `G` `H`
-  * Todo :)
+  * SpherePacking `G` `H`
