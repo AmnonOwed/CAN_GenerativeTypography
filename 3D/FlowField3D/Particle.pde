@@ -43,10 +43,9 @@ class Particle {
     return col;
   }
 
-  // first check position against bounding box (for efficiency), then against actual mesh
+  // check against actual mesh (in this sketch we already know the point must be inside the boundingBox)
   boolean isInMesh(PVector p) {
-    WB_Point location = new WB_Point(p.x, p.y, p.z);
-    return boundingBox.contains(location) && mesh.contains(location, false);
+    return mesh.contains(new WB_Point(p.x, p.y, p.z), false);
   }
 
   // couldn't finding anything useful on the internet about 3D vector fields, 
