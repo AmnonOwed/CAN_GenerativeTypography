@@ -49,7 +49,7 @@ void setup() {
 void draw() {
   // begin recording to PDF
   if (saveOneFrame == true) {
-    beginRecord(PDF, "UsingGeomerative-" + timestamp() + ".pdf");
+    beginRecord(PDF, "LinesCircles-" + timestamp() + ".pdf");
   }
   
   // set colorMode for the sketch to Hue-Saturation-Brightness (HSB)
