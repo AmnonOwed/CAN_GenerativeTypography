@@ -1,7 +1,7 @@
 ﻿Generative Typography
 =====================
 
-Blog post location: **TBD**
+Blog post location: [http://www.creativeapplications.net/processing/generative-typography-processing-tutorial](http://www.creativeapplications.net/processing/generative-typography-processing-tutorial)
 
 Original repository location: [https://github.com/AmnonOwed/CAN_GenerativeTypography](https://github.com/AmnonOwed/CAN_GenerativeTypography)
 
