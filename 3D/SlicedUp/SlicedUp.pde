@@ -68,7 +68,7 @@ void draw() {
     for (HE_Face face : mesh.getFacesAsArray ()) {
       color c = face.getLabel();
       fill(c==-1 ? 255 : c); // inside or colored
-      render.drawFace(face, false, mesh);
+      render.drawFace(face, false);
     }
   }
 }
@@ -151,7 +151,7 @@ ArrayList <HE_Mesh> slice(ArrayList <HE_Mesh> meshList, float offset) {
     HEMC_SplitMesh multiCreator = new HEMC_SplitMesh();
     multiCreator.setMesh(mesh);
     multiCreator.setOffset(offset);
-    multiCreator.setPlane(new WB_Plane(center.x, center.y, center.z, random(-1, 1), random(-1, 1), random(-1, 1)));
+    multiCreator.setPlane(new WB_Plane(center.xf(), center.xf(), center.xf(), random(-1, 1), random(-1, 1), random(-1, 1)));
     HE_Mesh[] cells = multiCreator.create();
     java.util.Collections.addAll(newList, cells);
   }
