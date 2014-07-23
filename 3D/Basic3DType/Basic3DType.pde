@@ -53,7 +53,7 @@ void draw() {
     // colors are stored in each Face's label (see colorFaces() method below)
     fill(face.getLabel());
     // draw the face using Hemesh's render class
-    render.drawFace(face, false, mesh);
+    render.drawFace(face, false);
   }
 }
 
