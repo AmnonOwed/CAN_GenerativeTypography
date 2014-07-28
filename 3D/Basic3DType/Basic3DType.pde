@@ -106,10 +106,11 @@ HE_Mesh createHemeshFromString(String s) {
   // (at this point we add the flipped faces to closes the mesh, the flipping ensures correct, outward normals) 
   tmesh.add(new HE_Mesh(new HEC_FromTriangles().setTriangles(trianglesFlipped)));
   
-  // 4. now we return the final mesh
-  // (we could just return tmesh, but to create a quality internal structure, which will be useful
-  // later for mesh manipulation, the whole shape is recreated from polygon soup before returning it)
-  return new HE_Mesh(new HEC_FromPolygons(tmesh.getPolygons()));
+  // 4. create a quality internal structure (useful for the mesh manipulations in subsequent examples)
+  tmesh.clean();
+  
+  // Done! Return the HE_Mesh...
+  return tmesh;
 }
 
 // color each face in the mesh based on it's xy-position using HSB colormode

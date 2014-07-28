@@ -97,7 +97,8 @@ HE_Mesh createHemeshFromString(String s) {
   HE_Mesh tmesh = new HE_Mesh(new HEC_FromTriangles().setTriangles(triangles));
   tmesh.modify(new HEM_Extrude().setDistance(145));
   tmesh.add(new HE_Mesh(new HEC_FromTriangles().setTriangles(trianglesFlipped)));
-  return new HE_Mesh(new HEC_FromPolygons(tmesh.getPolygons()));
+  tmesh.clean();
+  return tmesh;
 }
 
 // store boundaries for use later on
