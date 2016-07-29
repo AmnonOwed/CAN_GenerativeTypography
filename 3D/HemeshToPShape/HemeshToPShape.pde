@@ -105,7 +105,7 @@ HE_Mesh createHemeshFromString(String s) {
 void colorFaces(HE_Mesh mesh) {
   colorMode(HSB, 1); // set colorMode to HSB
   for (HE_Face face : mesh.getFacesAsArray ()) {
-    WB_Point c = face.getFaceCenter();
+    WB_Coord c = face.getFaceCenter();
     face.setLabel(color(map(c.xf() + c.yf(), -500, 500, 0, 1), 1, 1));
   }
   colorMode(RGB, 255); // (re)set colorMode to RGB
@@ -119,8 +119,8 @@ PShape createPShapeFromHemesh(HE_Mesh mesh, boolean perVertexNormals) {
   int[][] facesHemesh = mesh.getFacesAsInt();
   float[][] verticesHemesh = mesh.getVerticesAsFloat();
   HE_Face[] faceArray = mesh.getFacesAsArray();
-  WB_Vector normal = null;
-  WB_Vector[] vertexNormals = null;
+  WB_Coord normal = null;
+  WB_Coord[] vertexNormals = null;
   if (perVertexNormals) { vertexNormals = mesh.getVertexNormals(); }
 
   // create a PShape from the HE_Mesh shape data

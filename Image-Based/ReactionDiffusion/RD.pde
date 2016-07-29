@@ -122,7 +122,7 @@ class RD {
   
   // set the division rates based on the ALPHA (!) values of the input image
   void setImage(PImage input) {
-    input.resize(w, h); // resize input image to simulation dimensions
+    input.copy().resize(w, h); // resize input image to simulation dimensions
     for (int i=0;i<arrayLength;i++) {
       int a = (input.pixels[i] >> 24) & 0xFF; // bitshift alpha
       D[i] = a / 255.0;

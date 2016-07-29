@@ -117,7 +117,7 @@ HE_Mesh createHemeshFromString(String s) {
 void colorFaces(HE_Mesh mesh) {
   colorMode(HSB, 1); // set colorMode to HSB
   for (HE_Face face : mesh.getFacesAsArray ()) {
-    WB_Point c = face.getFaceCenter();
+    WB_Coord c = face.getFaceCenter();
     face.setLabel(color(map(c.xf() + c.yf(), -500, 500, 0, 1), 1, 1));
   }
   colorMode(RGB, 255); // (re)set colorMode to RGB

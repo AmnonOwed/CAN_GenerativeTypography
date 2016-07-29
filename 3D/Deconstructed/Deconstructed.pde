@@ -137,7 +137,7 @@ PShape createPShapeFromHemesh(HE_Mesh mesh, boolean deconstructed) {
   int[][] facesHemesh = mesh.getFacesAsInt();
   float[][] verticesHemesh = mesh.getVerticesAsFloat();
   HE_Face[] faceArray = mesh.getFacesAsArray();
-  WB_Vector normal = null;
+  WB_Coord normal = null;
 
   println("Storing mesh in PShape.");
   // create a PShape from the HE_Mesh shape data

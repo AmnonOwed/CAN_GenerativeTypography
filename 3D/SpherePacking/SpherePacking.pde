@@ -60,7 +60,7 @@ void draw() {
     s.display(); // growing Spheres are shown separately via immediate mode
   }
   shape(shape); // all grown Spheres are shown via a single retained mode PShape
-  frame.setTitle("Added to PShape: " + shape.getChildCount() + " of " + numSpheres + (shape.getChildCount()==numSpheres ? " (completed)" : " (may be sluggish while growing Spheres)"));
+  surface.setTitle("Added to PShape: " + shape.getChildCount() + " of " + numSpheres + (shape.getChildCount()==numSpheres ? " (completed)" : " (may be sluggish while growing Spheres)"));
 }
 
 // Turn a string into a 3D HE_Mesh

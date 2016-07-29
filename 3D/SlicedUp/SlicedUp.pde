@@ -127,7 +127,7 @@ HE_Mesh createHemeshFromString(String s) {
 void colorFaces(HE_Mesh mesh) {
   colorMode(HSB, 1); // set colorMode to HSB
   for (HE_Face face : mesh.getFacesAsArray ()) {
-    WB_Point c = face.getFaceCenter();
+    WB_Coord c = face.getFaceCenter();
     face.setLabel(color(map(c.xf() + c.yf(), -500, 500, 0, 1), 1, 1));
   }
   colorMode(RGB, 255); // (re)set colorMode to RGB
@@ -148,13 +148,15 @@ void generateMeshes(HE_Mesh mesh) {
 ArrayList <HE_Mesh> slice(ArrayList <HE_Mesh> meshList, float offset) {
   ArrayList <HE_Mesh> newList = new ArrayList <HE_Mesh> ();
   for (HE_Mesh mesh : meshList) {
-    WB_Point center = mesh.getCenter();
+    WB_Coord center = mesh.getCenter();
     HEMC_SplitMesh multiCreator = new HEMC_SplitMesh();
     multiCreator.setMesh(mesh);
     multiCreator.setOffset(offset);
     multiCreator.setPlane(new WB_Plane(center.xf(), center.xf(), center.xf(), random(-1, 1), random(-1, 1), random(-1, 1)));
-    HE_Mesh[] cells = multiCreator.create();
-    java.util.Collections.addAll(newList, cells);
+    HE_MeshCollection meshCollection = multiCreator.create();
+    for (int i=0; i<meshCollection.size(); i++) {
+      newList.add(meshCollection.getMesh(i));
+    }
   }
   return newList;
 }
@@ -162,10 +164,9 @@ ArrayList <HE_Mesh> slice(ArrayList <HE_Mesh> meshList, float offset) {
 // the movement
 void move(ArrayList <HE_Mesh> meshList, float offset) {
   for (HE_Mesh mesh : meshList) {
-    WB_Point center = mesh.getCenter();
-    center._normalizeSelf();
-    center._mulSelf(offset);
+    WB_Point center = (WB_Point) mesh.getCenter();
+    center.normalizeSelf();
+    center.mulSelf(offset);
     mesh.move(center);
   }
 }
-
